@@ -87,12 +87,32 @@ public class BowlingGameTest {
     }
 
     @Test
-    void should_get_50_scores_when_play_bowling_given_first_round_strike_and_second_round_strike_and_third_round_strike() {
+    void should_get_60_scores_when_play_bowling_given_first_round_strike_and_second_round_strike_and_third_round_strike() {
         BowlingGame bowlingGame = new BowlingGame(Arrays.asList(new RoundResult(10, 0),new RoundResult(10, 0),new RoundResult(10, 0)));
 
         Integer score = bowlingGame.playBowling();
 
-        Integer expectResult = 50;
+        Integer expectResult = 60;
+        Assertions.assertEquals(expectResult, score);
+    }
+
+    @Test
+    void should_get_50_scores_when_play_bowling_given_tenth_round_strike_and_add_throw_4_balls_and_5_balls() {
+        BowlingGame bowlingGame = new BowlingGame(Arrays.asList(
+                new RoundResult(4, 6),
+                new RoundResult(10, 0),
+                new RoundResult(10, 0),
+                new RoundResult(10, 0),
+                new RoundResult(10, 0),
+                new RoundResult(10, 0),
+                new RoundResult(4, 5),
+                new RoundResult(4, 6),
+                new RoundResult(4, 6),
+                new RoundResult(10, 0),
+                new RoundResult(4, 6)));
+        Integer score = bowlingGame.playBowling();
+
+        Integer expectResult = 232;
         Assertions.assertEquals(expectResult, score);
     }
 

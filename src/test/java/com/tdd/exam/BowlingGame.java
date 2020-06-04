@@ -35,7 +35,13 @@ public class BowlingGame {
 
     private Integer calculateStrikeScore(int index, List<RoundResult> roundResult) {
         Integer strikeScore = 0;
-        if (roundResult.size() >= index +2) {
+        if (roundResult.size() > index +2) {
+            if (roundResult.get(index+1).getFirstThrowBalls() == 10) {
+                strikeScore = strikeScore + 10 + roundResult.get(index+1).getFirstThrowBalls()+roundResult.get(index+1).getFirstThrowBalls();
+            } else {
+                strikeScore = strikeScore + 10 + roundResult.get(index+1).getFirstThrowBalls()+roundResult.get(index+1).getSecondThrowBalls();
+            }
+        } else if(roundResult.size() == index + 2) {
             strikeScore = strikeScore + 10 + roundResult.get(index+1).getFirstThrowBalls()+roundResult.get(index+1).getSecondThrowBalls();
         } else {
             strikeScore += 10;
