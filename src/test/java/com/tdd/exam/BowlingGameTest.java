@@ -66,4 +66,14 @@ public class BowlingGameTest {
         Assertions.assertEquals(expectResult, score);
     }
 
+    @Test
+    void should_get_30_scores_when_play_bowling_given_first_round_first_throw_4_balls_second_throw_6_balls_and_second_round_first_throw_10_balls() {
+        BowlingGame bowlingGame = new BowlingGame(Arrays.asList(new RoundResult(4, 6),new RoundResult(10, 0)));
+
+        Integer score = bowlingGame.playBowling();
+
+        Integer expectResult = 30;
+        Assertions.assertEquals(expectResult, score);
+    }
+
 }

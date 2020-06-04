@@ -15,12 +15,22 @@ public class BowlingGame {
             if (result.getFirstThrowBalls() == 10) {
                 score += calculateStrikeScore(i, roundResult);
             } else if (result.getFirstThrowBalls() + result.getSecondThrowBalls() == 10){
-                score += 10;
+                score += calculateSpareScore(i, roundResult);
             } else {
                 score += result.getFirstThrowBalls() + result.getSecondThrowBalls();
             }
         }
         return score;
+    }
+
+    private Integer calculateSpareScore(int index, List<RoundResult> roundResult) {
+        Integer spareScore = 0;
+        if (roundResult.size() >= index +2) {
+            spareScore = spareScore + 10 + roundResult.get(index+1).getFirstThrowBalls();
+        } else {
+            spareScore += 10;
+        }
+        return spareScore;
     }
 
     private Integer calculateStrikeScore(int index, List<RoundResult> roundResult) {
