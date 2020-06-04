@@ -1,27 +1,27 @@
 package com.tdd.exam;
 
 public class RoundResult {
-    private Integer score;
-    private ScoreType scoreType;
+    private Integer firstThrowBalls;
+    private Integer secondThrowBalls;
 
-    public RoundResult(Integer score, ScoreType scoreType) {
-        this.score = score;
-        this.scoreType = scoreType;
+    public RoundResult(Integer firstThrowBalls, Integer secondThrowBalls) {
+        this.firstThrowBalls = firstThrowBalls;
+        this.secondThrowBalls = secondThrowBalls;
     }
 
-    public Integer getScore() {
-        return score;
+    public Integer getFirstThrowBalls() {
+        return firstThrowBalls;
     }
 
-    public void setScore(Integer score) {
-        this.score = score;
+    public void setFirstThrowBalls(Integer firstThrowBalls) {
+        this.firstThrowBalls = firstThrowBalls;
     }
 
-    public ScoreType getScoreType() {
-        return scoreType;
+    public Integer getSecondThrowBalls() {
+        return secondThrowBalls;
     }
 
-    public void setScoreType(ScoreType scoreType) {
-        this.scoreType = scoreType;
+    public void setSecondThrowBalls(Integer secondThrowBalls) {
+        this.secondThrowBalls = secondThrowBalls;
     }
 }

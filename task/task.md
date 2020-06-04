@@ -24,38 +24,13 @@
     get 9 scores
 
 #第二轮
-`Given` 
-    first round strike
-`When`
-    play bowling
-`Then`
-    get ten scores
-
-2.
-`Given` 
-    first round spare
-`When`
-    play bowling
-`Then`
-    get ten scores
-
-3.    
-`Given` 
-    first round first throw 4 balls and second throw 5 balls
-`When`
-    play bowling
-`Then`
-    get 9 scores
-    
-
-#第二轮
 1.
 `Given` 
     first round strike and second round strike
 `When`
     play bowling
 `Then`
-    get 10+10 scores
+    get 10+10+10(ball number)=30 scores
 
 2.
 `Given` 
