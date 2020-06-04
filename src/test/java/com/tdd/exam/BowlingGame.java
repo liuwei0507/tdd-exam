@@ -11,7 +11,15 @@ public class BowlingGame {
     public Integer playBowling() {
         Integer score = 0;
         for (int i = 0; i < roundResult.size(); i++) {
-            score += roundResult.get(i).getScore();
+            RoundResult result = roundResult.get(i);
+            switch (result.getScoreType()) {
+                case STRIKE:
+                    score += result.getScore();
+                    break;
+                case SPARE:
+                    score += result.getScore();
+            }
+
         }
         return score;
     }
